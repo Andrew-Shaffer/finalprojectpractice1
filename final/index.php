@@ -73,7 +73,47 @@
     </div>
 
 
+ <?php
 
+       $cnt = mysqli_connect('localhost', 'root','', 'myDatabase');
+
+       $qry = "select * from myTable";
+
+       $result = mysqli_query($cnt, $qry);
+
+//        print_r($result);
+
+       while($row = $result->fetch_assoc()){
+//            print_r($row);
+//            echo '<br><br>';
+           if($row['avatar'] == 'trump')
+           $avatarName = "Donald Trump";           if($row['avatar'] == 'hillary')
+           $avatarName = "Hillary Clinton";           if($row['avatar'] == 'mitch')
+           $avatarName = "Mitch McConnel";           if($row['avatar'] == 'obama')
+           $avatarName = "Barack Obama";
+           
+           echo '
+           
+    <div id="padder">
+        <div id="inner">
+            <img src="'.$row['avatar'].'.jpg" id="avatar">
+            <p id="usertext">
+                '.$avatarName.' says: <br>
+                "'.$row['message'].'"
+            </p>
+        </div>
+    </div>
+           
+           
+           
+           
+           
+           ';
+       };
+
+       mysqli_close($cnt);
+
+       ?>
 
 
 

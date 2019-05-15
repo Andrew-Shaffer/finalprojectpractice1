@@ -63,16 +63,16 @@
         <br>
         <div class="row">
             <div class="col">
-                <input type="radio" name="avatar" value="quimby"> Mayor Quimby<img src="Simpsons.png" id="avatar"><br>
+                <input type="radio" name="avatar" value="trump"> Donald Trump<img src="trump.jpg" id="avatar"><br>
             </div>
             <div class="col">
-                <input type="radio" name="avatar" value="bush"> George Bush<img src="Simpsons.png" id="avatar"><br>
+                <input type="radio" name="avatar" value="mitch"> Mitch McConnel<img src="mitch.jpg" id="avatar"><br>
             </div>
             <div class="col">
-                <input type="radio" name="avatar" value="hillary"> Hillary Clinton<img src="Simpsons.png" id="avatar"><br>
+                <input type="radio" name="avatar" value="hillary"> Hillary Clinton<img src="hillary.jpg" id="avatar"><br>
             </div>
             <div class="col">
-                <input type="radio" name="avatar" value="obama"> Barack Obama<img src="Simpsons.png" id="avatar"><br>
+                <input type="radio" name="avatar" value="obama"> Barack Obama<img src="obama.jpg" id="avatar"><br>
             </div>
         </div>
         <div class="row">
@@ -91,7 +91,7 @@
         </div>
 
         <label>
-            <textarea rows="4" cols="50" name="comment" form="usrform">Enter your message here...</textarea></label>
+            <textarea row="4" col="100" name="comment">Enter your message here...</textarea></label>
         <br>
         <input type="submit" name="submit" value="Post Message">
     </form>
