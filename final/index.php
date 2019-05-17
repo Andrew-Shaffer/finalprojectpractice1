@@ -9,17 +9,28 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+
+
     <title>MESSAGE BOARD</title>
 
 
     <style>
+        body {
+            background-image: url(parchment.jpg);
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+        }
+
+
         #padder {
             background-color: grey;
-            padding: 10px 0px;
+            padding-top: 10px;
         }
 
         #inner {
-            background-color: beige;
+            /*            background-color: beige;*/
+            background-image: url(parchment.jpg);
             padding-bottom: 10px;
         }
 
@@ -38,8 +49,14 @@
         }
 
         #beige {
-            background-color: beige;
+            /*            background-color: beige;*/
+            background-image: url(parchment.jpg);
         }
+
+        #banner {
+            width: 100%;
+        }
+
     </style>
 
 
@@ -47,10 +64,11 @@
 
 </head>
 
-<body id="beige">
+<body>
 
+    <img src="flag.jpeg" class="img-fluid" alt="Responsive image" id="banner">
 
-<?php require_once('nav.php'); ?>
+    <?php require_once('nav.php'); ?>
 
     <div id="spaceundernav">
 
@@ -73,41 +91,53 @@
     </div>
 
 
- <?php
+    <?php
 
        $cnt = mysqli_connect('localhost', 'root','', 'myDatabase');
 
        $qry = "select * from myTable";
 
        $result = mysqli_query($cnt, $qry);
-
+    
+        $newArray= [];
 //        print_r($result);
-
-       while($row = $result->fetch_assoc()){
+    
+        while($row = $result->fetch_assoc()){
+            array_unshift($newArray, $row);
+        }
+        print_r($newArray);
+    
+        for($i = 0; $i < count($newArray); $i++){
 //            print_r($row);
 //            echo '<br><br>';
-           if($row['avatar'] == 'trump')
-           $avatarName = "Donald Trump";           if($row['avatar'] == 'hillary')
-           $avatarName = "Hillary Clinton";           if($row['avatar'] == 'mitch')
-           $avatarName = "Mitch McConnel";           if($row['avatar'] == 'obama')
+           if($newArray[$i]['avatar'] == 'trump')
+           $avatarName = "Donald Trump";
+           if($newArray[$i]['avatar'] == 'hillary')
+           $avatarName = "Hillary Clinton";
+           if($newArray[$i]['avatar'] == 'mitch')
+           $avatarName = "Mitch McConnel";
+           if($newArray[$i]['avatar'] == 'obama')
            $avatarName = "Barack Obama";
+           if($newArray[$i]['avatar'] == 'cortez')
+           $avatarName = "Alexandria Ocasio-Cortez";
+           if($newArray[$i]['avatar'] == 'bush')
+           $avatarName = "George W. Bush";
+           if($newArray[$i]['avatar'] == 'pence')
+           $avatarName = "Mike Pence";
+           if($newArray[$i]['avatar'] == 'pelosi')
+           $avatarName = "Nancy Pelosi";
            
            echo '
            
     <div id="padder">
         <div id="inner">
-            <img src="'.$row['avatar'].'.jpg" id="avatar">
+            <img src="'.$newArray[$i]['avatar'].'.jpg" id="avatar">
             <p id="usertext">
                 '.$avatarName.' says: <br>
-                "'.$row['message'].'"
+                "'.$newArray[$i]['message'].'"
             </p>
         </div>
     </div>
-           
-           
-           
-           
-           
            ';
        };
 
@@ -122,4 +152,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body></html>
+</body>
+
+</html>

@@ -13,7 +13,7 @@
                 </li>
             </ul>
             <span class="navbar-text">
-                Connecting Politics Worldwide
+                Connecting Politics for Us All
             </span>
         </div>
     </nav>

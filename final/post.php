@@ -9,17 +9,28 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+
     <title>MESSAGE BOARD</title>
 
 
     <style>
+        body {
+            background-image: url(parchment.jpg);
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+        }
+
+
         #padder {
             background-color: grey;
             padding: 10px 0px;
         }
 
         #inner {
-            background-color: beige;
+            /*            background-color: beige;*/
+            background-image: url(parchment.jpg);
             padding-bottom: 10px;
         }
 
@@ -38,7 +49,22 @@
         }
 
         #beige {
-            background-color: beige;
+            /*            background-color: beige;*/
+            background-image: url(parchment.jpg);
+        }
+
+        #banner {
+            width: 100%;
+        }
+
+        #centerTextLarge {
+            text-align: center;
+            font-size: 70px;
+        }
+
+        #centerTextSmall {
+            text-align: center;
+            font-size: 30px;
         }
 
     </style>
@@ -48,7 +74,7 @@
 
 </head>
 
-<body id="beige">
+<body>
 
     <?php require_once('nav.php'); ?>
 
@@ -58,42 +84,51 @@
 
     </div>
 
-    <h2>Post a Message</h2>
+    <h2 id="centerTextLarge">Post a Message</h2>
+
+    <br><br>
+    <h2 id="centerTextSmall">Who will you speak as?</h2>
+
+
+
     <form method="post" action="postmessage.php">
         <br>
         <div class="row">
-            <div class="col">
+            <div class="col-sm">
                 <input type="radio" name="avatar" value="trump"> Donald Trump<img src="trump.jpg" id="avatar"><br>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <input type="radio" name="avatar" value="mitch"> Mitch McConnel<img src="mitch.jpg" id="avatar"><br>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <input type="radio" name="avatar" value="hillary"> Hillary Clinton<img src="hillary.jpg" id="avatar"><br>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <input type="radio" name="avatar" value="obama"> Barack Obama<img src="obama.jpg" id="avatar"><br>
             </div>
         </div>
         <div class="row">
-            <div class="col">
-                <input type="radio" name="avatar" value="quimby"> Mayor Quimby<img src="Simpsons.png" id="avatar"><br>
+            <div class="col-sm">
+                <input type="radio" name="avatar" value="cortez"> Alexandria Ocasio-Cortez<img src="cortez.jpg" id="avatar"><br>
             </div>
-            <div class="col">
-                <input type="radio" name="avatar" value="bush"> George Bush<img src="Simpsons.png" id="avatar"><br>
+            <div class="col-sm">
+                <input type="radio" name="avatar" value="bush"> George Bush<img src="bush.jpg" id="avatar"><br>
             </div>
-            <div class="col">
-                <input type="radio" name="avatar" value="hillary"> Hillary Clinton<img src="Simpsons.png" id="avatar"><br>
+            <div class="col-sm">
+                <input type="radio" name="avatar" value="pence"> Mike Pence<img src="pence.jpg" id="avatar"><br>
             </div>
-            <div class="col">
-                <input type="radio" name="avatar" value="obama"> Barack Obama<img src="Simpsons.png" id="avatar"><br>
+            <div class="col-sm">
+                <input type="radio" name="avatar" value="pelosi"> Nancy Pelosi<img src="pelosi.jpg" id="avatar"><br>
             </div>
         </div>
 
         <label>
-            <textarea row="4" col="100" name="comment">Enter your message here...</textarea></label>
+            <div class="col-sm">
+                <textarea rows="4" cols="40" name="comment">Enter your message here...</textarea>
+        </label>
         <br>
         <input type="submit" name="submit" value="Post Message">
+        </div>
     </form>
 
 
