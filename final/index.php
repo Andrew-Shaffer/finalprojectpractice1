@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 
 
-    <title>MESSAGE BOARD</title>
+    <title>iGovernment, Where YOU are the government!</title>
 
 
     <style>
@@ -70,12 +70,14 @@
 
     <?php require_once('nav.php'); ?>
 
+<!--
     <div id="spaceundernav">
 
     </div>
+-->
 
 
-
+<!--
     <div id="padder">
         <div id="inner">
             <img src="Simpsons.png" id="avatar">
@@ -89,13 +91,14 @@
             </p>
         </div>
     </div>
+-->
 
 
     <?php
 
-       $cnt = mysqli_connect('localhost', 'root','', 'myDatabase');
-
-       $qry = "select * from myTable";
+       //$cnt = mysqli_connect('localhost', 'root','', 'myDatabase');
+        $cnt = mysqli_connect('localhost', 'fssa', 'Webdevfun1!', 'fssa');
+       $qry = "select * from iGovernment";
 
        $result = mysqli_query($cnt, $qry);
     
@@ -105,7 +108,7 @@
         while($row = $result->fetch_assoc()){
             array_unshift($newArray, $row);
         }
-        print_r($newArray);
+//        print_r($newArray);
     
         for($i = 0; $i < count($newArray); $i++){
 //            print_r($row);

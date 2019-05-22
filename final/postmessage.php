@@ -26,14 +26,15 @@ $message = $_POST['comment'];
 
 //move_uploaded_file($t, $i);
 
-$cnt = mysqli_connect('localhost','root','','myDatabase');
+$cnt = mysqli_connect('localhost', 'fssa', 'Webdevfun1!', 'fssa');
+//$cnt = mysqli_connect('localhost','root','','myDatabase');
 
-$qry = "insert into myTable (avatar, message) values ('$avatar', '$message');";
+$qry = "insert into iGovernment (avatar, message) values ('$avatar', '$message');";
 
 mysqli_query($cnt, $qry);
 
 mysqli_close($cnt);
 
-
+header("Location:index.php");
 
 ?>

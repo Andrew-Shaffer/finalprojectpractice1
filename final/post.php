@@ -12,7 +12,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 
-    <title>MESSAGE BOARD</title>
+    <title>iGovernment, Where YOU are the government!</title>
 
 
     <style>
@@ -124,7 +124,8 @@
 
         <label>
             <div class="col-sm">
-                <textarea rows="4" cols="40" name="comment">Enter your message here...</textarea>
+                Enter Your Message below:<br>
+                <textarea rows="5" cols="35" name="comment"></textarea>
         </label>
         <br>
         <input type="submit" name="submit" value="Post Message">
